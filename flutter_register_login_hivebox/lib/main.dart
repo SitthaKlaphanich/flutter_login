@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_register_login_hivebox/models/user_model.dart';
 import 'package:flutter_register_login_hivebox/screen/home.dart';
+import 'package:hive_flutter/adapters.dart';
 
-void main() {
+void main() async {
+  await Hive.initFlutter();
+  Hive.registerAdapter(UserModelAdapter());
   runApp(const MainApp());
 }
 

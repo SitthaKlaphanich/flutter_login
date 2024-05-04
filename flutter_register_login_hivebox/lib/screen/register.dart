@@ -19,6 +19,10 @@ class _RegisterScreen extends State<RegisterScreen> {
           child: Container(
             //กำหนดกรอบพื้นหลังขาว
             decoration: BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage("assets/images/backgroud.jpg"),
+                fit: BoxFit.cover,
+              ),
               color: Colors.white,
               borderRadius: BorderRadius.circular(10.0),
               //กำหนดพื้นหลังกรอบสีเทา
@@ -44,8 +48,10 @@ class _RegisterScreen extends State<RegisterScreen> {
                     SizedBox(height: 20),
                     Text(
                       "Name",
-                      style:
-                          TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                      style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white),
                     ),
                     TextFormField(),
                     SizedBox(
@@ -53,8 +59,10 @@ class _RegisterScreen extends State<RegisterScreen> {
                     ),
                     Text(
                       "E-mail",
-                      style:
-                          TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                      style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white),
                     ),
                     TextFormField(
                       keyboardType: TextInputType.emailAddress,
@@ -64,8 +72,10 @@ class _RegisterScreen extends State<RegisterScreen> {
                     ),
                     Text(
                       "Password",
-                      style:
-                          TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                      style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white),
                     ),
                     TextFormField(
                       obscureText: true,
