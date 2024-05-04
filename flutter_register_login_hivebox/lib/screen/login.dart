@@ -14,13 +14,28 @@ class _LoginScreen extends State<LoginScreen> {
         ),
         body: Container(
           child: Form(
-              child: Column(
-            children: [
-              Text("E-mail", style: TextStyle(fontSize: 20)),
-              TextFormField(),
-              Text("Password", style: TextStyle(fontSize: 20)),
-              TextFormField(),
-            ],
+              child: SingleChildScrollView(
+            child: Column(
+              children: [
+                Image.asset("assets/images/login.png"),
+                Text("E-mail", style: TextStyle(fontSize: 20)),
+                TextFormField(
+                  keyboardType: TextInputType.emailAddress,
+                ),
+                Text("Password", style: TextStyle(fontSize: 20)),
+                TextFormField(
+                  obscureText: true,
+                ),
+                SizedBox(
+                  width: double.maxFinite,
+                  child: ElevatedButton(
+                    child: Text("Login"),
+                    onPressed: () {},
+                  ),
+                  height: 55,
+                ),
+              ],
+            ),
           )),
         ));
   }

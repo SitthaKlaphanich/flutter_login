@@ -7,6 +7,7 @@ class RegisterScreen extends StatefulWidget {
 }
 
 class _RegisterScreen extends State<RegisterScreen> {
+  final formKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -15,16 +16,35 @@ class _RegisterScreen extends State<RegisterScreen> {
         ),
         body: Container(
           child: Form(
-              child: Column(
-            children: [
-              Text("Name", style: TextStyle(fontSize: 20)),
-              TextFormField(),
-              Text("E-mail", style: TextStyle(fontSize: 20)),
-              TextFormField(),
-              Text("Password", style: TextStyle(fontSize: 20)),
-              TextFormField(),
-            ],
-          )),
+              key: formKey,
+              child: SingleChildScrollView(
+                child: Column(
+                  children: [
+                    Image.asset("assets/images/register.png"),
+                    Text("Name", style: TextStyle(fontSize: 20)),
+                    TextFormField(),
+                    SizedBox(
+                      height: 15,
+                    ),
+                    Text("E-mail", style: TextStyle(fontSize: 20)),
+                    TextFormField(
+                      keyboardType: TextInputType.emailAddress,
+                    ),
+                    Text("Password", style: TextStyle(fontSize: 20)),
+                    TextFormField(
+                      obscureText: true,
+                    ),
+                    SizedBox(
+                      width: double.maxFinite,
+                      child: ElevatedButton(
+                        child: Text("Create an account"),
+                        onPressed: () {},
+                      ),
+                      height: 55,
+                    ),
+                  ],
+                ),
+              )),
         ));
   }
 }

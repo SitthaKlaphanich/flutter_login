@@ -20,3 +20,5 @@ flutter:
   assets:
   - assets/images/home.png
   - assets/images/backgroud.jpg
+  - assets/images/register.png
+  - assets/images/login.png
