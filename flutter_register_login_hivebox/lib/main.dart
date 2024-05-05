@@ -1,11 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_register_login_hivebox/models/user_model.dart';
+import 'package:flutter_register_login_hivebox/models/userprofile.dart';
 import 'package:flutter_register_login_hivebox/screen/home.dart';
-import 'package:hive_flutter/adapters.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 
-void main() async {
+late Box box;
+
+Future<void> main() async {
   await Hive.initFlutter();
-  Hive.registerAdapter(UserModelAdapter());
+  box = await Hive.openBox('box');
+  Hive.registerAdapter(UserProfileAdapter());
+  box.put('userprofile',
+      UserProfile(name: 'AAA', email: 'aaa@gmail.com', password: '123456789'));
   runApp(const MainApp());
 }
 
