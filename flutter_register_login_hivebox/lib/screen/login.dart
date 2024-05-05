@@ -1,83 +1,51 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_register_login_hivebox/main.dart'; // import Hive box
+import 'package:flutter_register_login_hivebox/models/userprofile.dart';
 
 class LoginScreen extends StatefulWidget {
+  const LoginScreen({Key? key}) : super(key: key);
+
   @override
-  State<LoginScreen> createState() => _LoginScreen();
+  _LoginScreen createState() => _LoginScreen();
 }
 
 class _LoginScreen extends State<LoginScreen> {
+  late UserProfile userProfile;
+
+  @override
+  void initState() {
+    super.initState();
+    // ดึงข้อมูล UserProfile จาก Hive ทันทีเมื่อหน้านี้ถูกสร้างขึ้น
+    userProfile = box.get('userprofile') as UserProfile;
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: Text("Login"),
+      appBar: AppBar(
+        title: Text("Login Successful"),
+      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              "Welcome ${userProfile.name}!", // แสดงข้อความต้อนรับพร้อมกับชื่อผู้ใช้
+              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+            ),
+            SizedBox(height: 20),
+            ElevatedButton(
+              onPressed: () {
+                // ทำการลบข้อมูล UserProfile ออกจาก Hive เมื่อผู้ใช้ทำการออกจากระบบ
+                box.delete('userprofile');
+                Navigator.pop(
+                    context); // กลับไปหน้าที่แล้ว (กลับไปยังหน้า login เช่น)
+              },
+              child: Text("Logout"), // ปุ่ม Logout
+            ),
+          ],
         ),
-        body: Padding(
-          padding: EdgeInsets.all(16.0),
-          child: Container(
-            //กำหนดกรอบพื้นหลังขาว
-            decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(10.0),
-              //กำหนดพื้นหลังกรอบสีเทา
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.grey.withOpacity(0.5),
-                  spreadRadius: 5,
-                  blurRadius: 7,
-                  offset: Offset(0, 3),
-                ),
-              ],
-            ),
-            child: SingleChildScrollView(
-              child: Padding(
-                padding: const EdgeInsets.all(16.0),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                  children: [
-                    SizedBox(height: 20),
-                    Text(
-                      "E-mail",
-                      style:
-                          TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-                    ),
-                    TextFormField(
-                      keyboardType: TextInputType.emailAddress,
-                    ),
-                    SizedBox(
-                      height: 15,
-                    ),
-                    Text(
-                      "Password",
-                      style:
-                          TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-                    ),
-                    TextFormField(
-                      obscureText: true,
-                    ),
-                    SizedBox(
-                      height: 20,
-                    ),
-                    ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                          foregroundColor: Colors.white,
-                          backgroundColor: Colors.blue,
-                          shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(30.0))),
-                      onPressed: () {},
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(vertical: 16.0),
-                        child: Text(
-                          "login",
-                          style: TextStyle(fontSize: 18),
-                        ),
-                      ),
-                    )
-                  ],
-                ),
-              ),
-            ),
-          ),
-        ));
+      ),
+    );
   }
 }
