@@ -20,7 +20,7 @@ class _RegisterScreen extends State<RegisterScreen> {
             //กำหนดกรอบพื้นหลังขาว
             decoration: BoxDecoration(
               image: DecorationImage(
-                image: AssetImage("assets/images/backgroud.jpg"),
+                image: AssetImage("assets/images/backgoundlogin.jpg"),
                 fit: BoxFit.cover,
               ),
               color: Colors.white,
@@ -53,7 +53,9 @@ class _RegisterScreen extends State<RegisterScreen> {
                           fontWeight: FontWeight.bold,
                           color: Colors.white),
                     ),
-                    TextFormField(),
+                    TextFormField(
+                      style: TextStyle(color: Colors.white),
+                    ),
                     SizedBox(
                       height: 15,
                     ),
@@ -66,6 +68,7 @@ class _RegisterScreen extends State<RegisterScreen> {
                     ),
                     TextFormField(
                       keyboardType: TextInputType.emailAddress,
+                      style: TextStyle(color: Colors.white),
                     ),
                     SizedBox(
                       height: 15,
@@ -79,6 +82,7 @@ class _RegisterScreen extends State<RegisterScreen> {
                     ),
                     TextFormField(
                       obscureText: true,
+                      style: TextStyle(color: Colors.white),
                     ),
                     SizedBox(
                       height: 20,
