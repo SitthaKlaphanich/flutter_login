@@ -42,7 +42,7 @@ class _RegisterScreen extends State<RegisterScreen> {
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
                     Image.asset(
-                      "assets/images/register.png",
+                      "assets/images/registe.png",
                       height: 200,
                     ),
                     SizedBox(height: 20),

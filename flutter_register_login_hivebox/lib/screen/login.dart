@@ -35,10 +35,6 @@ class _LoginScreen extends State<LoginScreen> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
-                    Image.asset(
-                      "assets/images/login.png",
-                      height: 200,
-                    ),
                     SizedBox(height: 20),
                     Text(
                       "E-mail",
