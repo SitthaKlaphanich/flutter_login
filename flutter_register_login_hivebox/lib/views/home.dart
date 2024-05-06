@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_register_login_hivebox/screen/login.dart';
-import 'package:flutter_register_login_hivebox/screen/register.dart';
+import 'package:flutter_register_login_hivebox/views/login.dart';
+import 'package:flutter_register_login_hivebox/views/register.dart';
 
 class HomeScreen extends StatelessWidget {
   @override

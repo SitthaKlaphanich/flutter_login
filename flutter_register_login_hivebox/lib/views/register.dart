@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_register_login_hivebox/main.dart';
-import 'package:flutter_register_login_hivebox/screen/Successful.dart';
+import 'package:flutter_register_login_hivebox/views/Successful.dart';
 import 'package:flutter_register_login_hivebox/models/userprofile.dart';
 
 class RegisterScreen extends StatefulWidget {
