@@ -1,24 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_register_login_hivebox/views/login.dart';
-import 'package:flutter_register_login_hivebox/views/register.dart';
+import 'package:flutter_register_login_hivebox/views/registers.dart';
 
 class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Register/Login"),
+        title: Text("ADVENTURE"),
+        backgroundColor: Colors.deepOrangeAccent,
       ),
       body: Padding(
-        padding: EdgeInsets.all(16.0),
+        padding: EdgeInsets.all(0.0),
         child: Container(
           decoration: BoxDecoration(
             image: DecorationImage(
-              image: AssetImage("assets/images/backgoundhome.jpg"),
+              image: AssetImage("assets/images/backgoundlogin.jpg"),
               fit: BoxFit.cover,
             ),
             color: Colors.white,
-            borderRadius: BorderRadius.circular(10.0),
+            borderRadius: BorderRadius.circular(0.0),
             boxShadow: [
               BoxShadow(
                 color: Colors.grey.withOpacity(0.5),

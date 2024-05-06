@@ -25,5 +25,8 @@ flutter:
   assets:
   - assets/images/backgoundhome.jpg
   - assets/images/backgoundlogin.jpg
+  - assets/images/backgoundregister.jpg
   - assets/images/homelogo.png
-  - assets/images/registe.png
+  - assets/images/registers.png
+  - assets/images/logologin.png
+  - assets/images/backgoundful.jpg

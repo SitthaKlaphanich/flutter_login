@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_register_login_hivebox/main.dart';
 import 'package:flutter_register_login_hivebox/models/userprofile.dart';
 
-class SuccessfulScreen extends StatelessWidget {
-  const SuccessfulScreen({Key? key});
+class SuccessfulloginScreen extends StatelessWidget {
+  const SuccessfulloginScreen({Key? key});
 
   @override
   Widget build(BuildContext context) {
@@ -38,7 +38,7 @@ class SuccessfulScreen extends StatelessWidget {
                       ? Column(
                           children: [
                             Text(
-                              "Registration Successful!",
+                              "Login Successful!",
                               style: TextStyle(
                                   fontSize: 24, fontWeight: FontWeight.bold),
                             ),
@@ -51,12 +51,6 @@ class SuccessfulScreen extends StatelessWidget {
                             SizedBox(height: 20),
                             Text(
                               "Email: ${userProfile.email}",
-                              style: TextStyle(
-                                  fontSize: 24, fontWeight: FontWeight.normal),
-                            ),
-                            SizedBox(height: 20),
-                            Text(
-                              "Password:${userProfile.password}",
                               style: TextStyle(
                                   fontSize: 24, fontWeight: FontWeight.normal),
                             ),
