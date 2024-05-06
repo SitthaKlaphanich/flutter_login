@@ -9,11 +9,6 @@ Future<void> main() async {
   await Hive.initFlutter();
   box = await Hive.openBox('box');
   Hive.registerAdapter(UserProfileAdapter());
-  box.put(
-      'userprofile',
-      UserProfile(
-          name: 'Sittha', email: '65030258@kmitl.ac.th', password: '12345'));
-
   runApp(const MainApp());
 }
 
